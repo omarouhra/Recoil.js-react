@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { basketState, nummberOfItemInBasket } from "../atoms/basketState";
 

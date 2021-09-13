@@ -4,6 +4,8 @@ import "./App.css";
 import { basketState } from "./atoms/basketState";
 import Profile from "./components/Profile";
 import Product from "./components/Product";
+import Quote from "./components/Quote";
+import { Suspense } from "react";
 
 function App() {
   const [user, setUser] = useRecoilState(userState);
@@ -28,8 +30,11 @@ function App() {
 
       <h2>Shopping App</h2>
       <h2>The total number of items in your basket : {basket.length}</h2>
-      <Product id="1" title='sonny a6600' price='1600$' />
+      <Product id='1' title='sonny a6600' price='1600$' />
       <Product id='2' title='Ipad' price='1399$' />
+      <Suspense fallback={<h2>Loading ....</h2>}>
+        <Quote />
+      </Suspense>
     </div>
   );
 }
